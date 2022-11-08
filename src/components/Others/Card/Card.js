@@ -13,13 +13,13 @@ const Card = ({service}) => {
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <h4 className="font-semibold">{title}</h4>
-          <p>{description1.length > 150 ? (
+          <>{description1.length > 150 ? (
             <p>
                   {description1.slice(0,100) + "..."}
             </p>)
             :(
             <>{description1}</>
-          )}</p>
+          )}</>
 
           <div className="card-actions justify-between">
             <div><p>Price: ${price}</p></div>
