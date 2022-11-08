@@ -9,9 +9,6 @@ const Card = ({ service }) => {
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
         <img src={img} alt="ShowImage" />
-        {/* <PhotoView src={img}>
-          <img src={img} style={{ objectFit: "cover" }} alt="" />
-        </PhotoView> */}
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
