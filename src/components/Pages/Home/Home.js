@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 import Footer from "../../Others/Footer/Footer";
 import Services from "../../Others/Services/Services";
 
 const Home = () => {
   const serviceList = useLoaderData("");
+  useTitle('Home')
 
   return (
     <div>

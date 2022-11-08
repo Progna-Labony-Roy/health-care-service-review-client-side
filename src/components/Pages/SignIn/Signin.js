@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Signin = () => {
   const { createUser } = useContext(AuthContext);
-  const [error , setError]=useState()
+  const [error , setError]=useState();
+  useTitle('Sign Up');
 
   const handleSignin = (event) =>{
     event.preventDefault();
@@ -12,7 +14,8 @@ const Signin = () => {
     const name =form.name.value;
     const email= form.email.value;
     const password = form.password.value;
-    console.log(name)
+    console.log(name);
+    
 
     createUser(email,password)
     .then((result) =>{
