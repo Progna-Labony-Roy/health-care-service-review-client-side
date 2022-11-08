@@ -62,9 +62,9 @@ const Login = () => {
           </div>
         </form>
         <p>
-          Already have an account?{" "}
-          <Link to="/login" className="text-teal-400 font-bold hover:text-lg">
-            Login
+          If you don't have an account, please{" "}
+          <Link to="/signup" className="text-teal-400 font-bold hover:text-lg">
+            Sign up
           </Link>
         </p>
       </div>
