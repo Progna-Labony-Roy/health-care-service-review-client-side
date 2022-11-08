@@ -4,6 +4,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const Signin = () => {
   const { createUser } = useContext(AuthContext);
+  const [error , setError]=useState()
 
   const handleSignin = (event) =>{
     event.preventDefault();
@@ -15,13 +16,14 @@ const Signin = () => {
 
     createUser(email,password)
     .then((result) =>{
-
+        setError('');
         const user=result.user;
         console.log(user);
         form.reset();
     })
     .catch((error) => {
         console.error(error);
+        setError(error.message);
     });
   }
 
@@ -73,7 +75,7 @@ const Signin = () => {
           </div>
         </form>
         <p>Already have an account? <Link to='/login' className='text-teal-400 font-bold hover:text-lg'>Login</Link></p>
-        {/* <p className="text-rose-600">{error}</p> */}
+        <p className="text-rose-600">{error}</p>
       </div>
     </div>
   );
