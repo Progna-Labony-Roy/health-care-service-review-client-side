@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   const navItems = (
     <>
       <li className="font-semibold">
@@ -10,18 +18,29 @@ const Header = () => {
       <li className="font-semibold">
         <Link to="/blog">Blog</Link>
       </li>
-      <li className="font-semibold">
-        <Link to="/addservices">Add Services</Link>
-      </li>
-      <li className="font-semibold">
-        <Link to="/myreviews">My Reviews</Link>
-      </li>
-      <li className="font-semibold">
-        <Link to="/login">Log in</Link>
-      </li>
-      <li className="font-semibold">
-        <Link to="/signup">Sign up</Link>
-      </li>
+
+      {user?.email ? (
+        <>
+          <li className="font-semibold">
+            <Link to="/addservices">Add Services</Link>
+          </li>
+          <li className="font-semibold">
+            <Link to="/myreviews">My Reviews</Link>
+          </li>
+          <li className="font-semibold">
+            <button onClick={handleLogout}>Log out</button>
+          </li>
+        </>
+      ) : (
+        <>
+          <li className="font-semibold">
+            <Link to="/login">Log in</Link>
+          </li>
+          <li className="font-semibold">
+            <Link to="/signup">Sign up</Link>
+          </li>
+        </>
+      )}
     </>
   );
 
