@@ -4,6 +4,8 @@ import Main from '../Others/Layout/Main';
 import Signin from '../Pages/SignIn/Signin';
 import Login from '../Pages/Login/Login';
 import Services from '../Others/Services/Services';
+import Blog from '../Pages/Blog/Blog';
+
 
 const { createBrowserRouter } = require("react-router-dom");
 
@@ -16,6 +18,10 @@ const router= createBrowserRouter([
           path: '/',
           element:<Home></Home>,
           loader: ()=> fetch('http://localhost:5000/services')
+        },
+        {
+          path: '/blog',
+          element:<Blog></Blog>
         },
         {
           path: '/signup',

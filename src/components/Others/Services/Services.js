@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const Services = () => {
     const [services, setServices]=useState([]);
