@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <div className="flex justify-center">
       <div className="w-2/5 mt-12">
-        <h2 className="text-2xl font-semibold mt-6">Please, Sign up</h2>
+        <h2 className="text-2xl font-semibold mt-6">Please, Log in</h2>
         <form onSubmit={handleLogin} className="card-body">
           <div className="form-control">
           </div>
@@ -56,7 +56,7 @@ const Login = () => {
           <div className="form-control mt-6">
             <input
               type="submit"
-              value="SignUp"
+              value="Login"
               className="btn btn-outline max-w-fit"
             />
           </div>
