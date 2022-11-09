@@ -13,9 +13,9 @@ const DetailsCard = () => {
 
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-screen-xl mx-auto my-11">
-      <div className="details-section  md:col-span-2">
-      <h3 className="text-2xl font-semibold italic text-cyan-400 mb-10">Learn More</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-screen-xl mx-auto my-11">
+      <div className="details-section">
+      <h2 className="text-2xl font-semibold italic text-cyan-400 mb-10">Learn More</h2>
         <img src={img} alt="ShowImage" />
         <div className="">
           <h2 className="text-xl font-semibold my-5">{name}</h2>
@@ -26,7 +26,7 @@ const DetailsCard = () => {
             <p>Price: ${price}</p>
           </div>
           <div className="my-10">
-            <Link to="/home">
+            <Link to="/">
               <button className="btn btn-accent">Home</button>
             </Link>
           </div>
@@ -37,7 +37,7 @@ const DetailsCard = () => {
           user?.email ?
           <>
           <div className="">
-            <h3 className="text-2xl font-semibold italic text-cyan-400 mb-10">Reviews</h3>
+            <h2 className="text-2xl font-semibold italic text-cyan-400 mb-10">Reviews</h2>
           <Review></Review>
         </div>
           </>
