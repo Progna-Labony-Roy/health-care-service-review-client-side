@@ -1,21 +1,23 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
+import Banner from "../../Others/Banner/Banner/Banner";
 import Footer from "../../Others/Footer/Footer";
 import Services from "../../Others/Services/Services";
 
 const Home = () => {
   const serviceList = useLoaderData("");
-  useTitle('Home')
+  useTitle("Home");
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto">
-        <h1 className="text-3xl font-semibold italic text-cyan-400 my-8 flex justify-center">
-          We're Glad You Found Us
-        </h1>
+      <h1 className="text-3xl font-semibold italic text-cyan-400 mt-8 flex justify-center">
+        We're Glad You Found Us
+      </h1>
+      {/* ---------------------- */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="my-32">
-          <h1 className="text-2xl font-semibold italic text-cyan-400 my-8">
+          <h1 className="text-2xl font-semibold italic text-cyan-400">
             Our Services
           </h1>
           <p className="italic">
@@ -31,13 +33,23 @@ const Home = () => {
             <li key={service._id}>{service.title}</li>
           ))}
         </div>
-        <Services></Services>
-        <Link className="flex justify-center" to="/services">
-          <button className="btn btn-accent hover:text-white mb-10">
-            See All
-          </button>{" "}
-        </Link>
+
+        <div className="mt-10">
+          <Banner></Banner>
+        </div>
       </div>
+
+      {/* ------------------------- */}
+
+      <Services></Services>
+      <Link className="flex justify-center" to="/services">
+        <button className="btn btn-accent hover:text-white mb-10">
+          See All
+        </button>{" "}
+      </Link>
+
+
+      {/* -------------------- */}
       <Footer></Footer>
     </div>
   );

@@ -7,6 +7,8 @@ import Services from '../Others/Services/Services';
 import Blog from '../Pages/Blog/Blog';
 import DetailsCard from '../Others/DetailsCard/DetailsCard';
 import PrivateRoute from './PrivateRoute'
+import MyReviews from '../Pages/MyReviews/MyReviews';
+import AddServices from '../Pages/AddServices/AddServices';
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -39,8 +41,16 @@ const router= createBrowserRouter([
         },
         {
           path: '/services/:id',
-          element:<PrivateRoute><DetailsCard></DetailsCard></PrivateRoute>,
+          element:<DetailsCard></DetailsCard>,
           loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path: '/addservices',
+          element: <AddServices></AddServices>
+        },
+        {
+          path: '/myreviews',
+          element: <MyReviews></MyReviews>
         }
       ]
     }
