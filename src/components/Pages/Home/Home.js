@@ -2,15 +2,17 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 import Banner from "../../Others/Banner/Banner/Banner";
-import Footer from "../../Others/Footer/Footer";
+import Footer from '../../Others/Footer/Footer';
 import Services from "../../Others/Services/Services";
 
 const Home = () => {
   const serviceList = useLoaderData("");
   useTitle("Home");
+  
 
   return (
     <div>
+      <div className="max-w-screen-xl mx-auto">
       <h1 className="text-3xl font-semibold italic text-cyan-400 mt-8 flex justify-center">
         We're Glad You Found Us
       </h1>
@@ -40,17 +42,15 @@ const Home = () => {
       </div>
 
       {/* ------------------------- */}
-
       <Services></Services>
       <Link className="flex justify-center" to="/services">
         <button className="btn btn-accent hover:text-white mb-10">
           See All
-        </button>{" "}
+        </button>
       </Link>
-
-
-      {/* -------------------- */}
-      <Footer></Footer>
+      
+    </div>
+   <Footer></Footer>
     </div>
   );
 };

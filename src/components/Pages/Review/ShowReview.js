@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import ReviewData from "./ReviewData";
 
 const ShowReview = () => {
+ 
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://service-review-server-side-jet.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -19,7 +20,7 @@ const ShowReview = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
+              <th>Service Name</th>
               <th>Email</th>
               <th>Review</th>
             </tr>

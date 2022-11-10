@@ -1,14 +1,16 @@
 import React from 'react';
 import Home from '../Pages/Home/Home';
 import Main from '../Others/Layout/Main';
-import Signin from '../Pages/SignIn/Signin';
+import SignUp from '../Pages/SignUp/SignUp';
 import Login from '../Pages/Login/Login';
 import Services from '../Others/Services/Services';
 import Blog from '../Pages/Blog/Blog';
 import DetailsCard from '../Others/DetailsCard/DetailsCard';
-import PrivateRoute from './PrivateRoute'
 import MyReviews from '../Pages/MyReviews/MyReviews';
 import AddServices from '../Pages/AddServices/AddServices';
+import Review from '../Pages/Review/Review';
+import PrivateRoute from '../Routes/PrivateRoute'
+
 
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -21,7 +23,7 @@ const router= createBrowserRouter([
         {
           path: '/',
           element:<Home></Home>,
-          loader: ()=> fetch('http://localhost:5000/services')
+          loader: ()=> fetch('https://service-review-server-side-jet.vercel.app/services')
         },
         {
           path: '/blog',
@@ -29,7 +31,7 @@ const router= createBrowserRouter([
         },
         {
           path: '/signup',
-          element: <Signin></Signin>
+          element: <SignUp></SignUp>
         },
         { 
           path: '/login',
@@ -42,7 +44,12 @@ const router= createBrowserRouter([
         {
           path: '/services/:id',
           element:<DetailsCard></DetailsCard>,
-          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params}) => fetch(`https://service-review-server-side-jet.vercel.app/services/${params.id}`)
+        },
+        {
+          path:'/review/:id',
+          element:<PrivateRoute><Review></Review></PrivateRoute>,
+          loader:({params}) => fetch(`https://service-review-server-side-jet.vercel.app/services/${params.id}`)
         },
         {
           path: '/addservices',

@@ -9,7 +9,7 @@ const AddServices = () => {
     event.preventDefault();
     console.log(service);
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://service-review-server-side-jet.vercel.app/services", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(service),
@@ -27,7 +27,7 @@ const AddServices = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto">
       <form onSubmit={handleServiceButton}>
       <div className="form-control w-full max-w-xs">
         <label className="label">
@@ -38,6 +38,7 @@ const AddServices = () => {
           name="name"
           placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
+          required
         />
       </div>
       <div className="form-control w-full max-w-xs">
@@ -49,6 +50,7 @@ const AddServices = () => {
           name="title"
           placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
+          required
         />
       </div>
       <div className="form-control w-full max-w-xs">
@@ -60,6 +62,7 @@ const AddServices = () => {
           name="img"
           placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
+          required
         />
       </div>
       <div className="form-control w-full max-w-xs">
@@ -71,6 +74,7 @@ const AddServices = () => {
           name="price"
           placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
+          required
         />
       </div>
       <div className="form-control w-full max-w-xs">
@@ -82,6 +86,7 @@ const AddServices = () => {
           name="description1"
           placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
+          required
         />
       </div>
       <div className="form-control w-full max-w-xs">

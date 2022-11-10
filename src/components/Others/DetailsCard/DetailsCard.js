@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
-import Review from "../Review/Review";
+import Review from "../../Pages/Review/Review";
+import ShowReview from "../../Pages/Review/ShowReview";
 
 
 const DetailsCard = () => {
@@ -9,7 +10,7 @@ const DetailsCard = () => {
   const { user } =useContext(AuthContext);
   const details = useLoaderData();
   // console.log(details);
-  const { name, img, title, price, description1, description2 } = details;
+  const { _id, name, img, title, price, description1, description2 } = details;
 
 
   return (
@@ -33,7 +34,7 @@ const DetailsCard = () => {
         </div>
       </div>
       <div>
-        {
+        {/* {
           user?.email ?
           <>
           <div className="">
@@ -53,8 +54,9 @@ const DetailsCard = () => {
             </div>
          
         </div></>
-        }
-        
+        } */}
+         <h3 className="text-2xl font-semibold italic text-cyan-400 mb-10">All reviews</h3>
+        <ShowReview></ShowReview>
       </div>
     </div>
   );

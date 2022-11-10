@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, githubLogin } = useContext(AuthContext);
+
+  const handleGithubSignIn =() =>{
+    githubLogin()
+    .then(res => {
+      const user=res.user;
+      console.log(user)
+    })
+    .catch(error => console.error(error))
+  }
 
   const handleLogout = () => {
     logOut()
@@ -19,7 +28,7 @@ const Header = () => {
         <Link to="/blog">Blog</Link>
       </li>
 
-      {user?.email ? (
+      {user?.uid ? (
         <>
           <li className="font-semibold">
             <Link to="/addservices">Add Services</Link>
@@ -38,6 +47,9 @@ const Header = () => {
           </li>
           <li className="font-semibold">
             <Link to="/signup">Sign up</Link>
+          </li>
+          <li className="font-semibold">
+            <button onClick={handleGithubSignIn} className="btn btn-outline">Github SignIn</button>
           </li>
         </>
       )}
