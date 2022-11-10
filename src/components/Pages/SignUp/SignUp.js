@@ -4,7 +4,7 @@ import useTitle from "../../../Hooks/useTitle";
 import { AuthContext } from "../../Context/AuthProvider";
 
 const Signin = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error , setError]=useState();
   useTitle('Sign Up');
 
@@ -13,6 +13,7 @@ const Signin = () => {
     const form = event.target;
     const name =form.name.value;
     const email= form.email.value;
+    const photoURL=form.photoURL.value
     const password = form.password.value;
     console.log(name);
     
@@ -22,12 +23,23 @@ const Signin = () => {
         setError('');
         const user=result.user;
         console.log(user);
+        handleUpdateUserProfile(name , photoURL)
         form.reset();
     })
     .catch((error) => {
         console.error(error);
         setError(error.message);
     });
+  }
+
+  const handleUpdateUserProfile=(name ,photoURL)=>{
+    const profile={
+      displayName:name ,
+      photoURL:photoURL
+    }
+    updateUserProfile(profile)
+    .then( ()=>{})
+    .catch(error => console.error(error));
   }
 
   return (
@@ -54,6 +66,17 @@ const Signin = () => {
               type="text"
               placeholder="email"
               name="email"
+              className="input input-bordered"
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Photo URL</span>
+            </label>
+            <input
+              type="text"
+              placeholder="email"
+              name="photoURL"
               className="input input-bordered"
             />
           </div>

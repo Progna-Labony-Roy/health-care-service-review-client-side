@@ -15,26 +15,36 @@ const ShowReview = () => {
 
 
   return (
-      <div className="overflow-x-auto">
-        <table className="table w-full">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Service Name</th>
-              <th>Email</th>
-              <th>Review</th>
-            </tr>
-          </thead>
-          <tbody>
-            {reviews.map((singleReview) => (
+    <div className="overflow-x-auto w-full">
+  <table className="table w-full">
+ 
+    <thead>
+      <tr>
+        <th>
+         
+        </th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Favorite Color</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {reviews.map((singleReview) => (
               <ReviewData
                 key={singleReview._id}
                 singleReview={singleReview}
               ></ReviewData>
             ))}
-          </tbody>
-        </table>
-      </div>
+      
+    </tbody>
+   
+    
+  </table>
+</div>
+
+
+      
   );
 };
 
