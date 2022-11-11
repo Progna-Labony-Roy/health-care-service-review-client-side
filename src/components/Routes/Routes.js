@@ -48,7 +48,7 @@ const router= createBrowserRouter([
         },
         {
           path:'/review/:id',
-          element:<PrivateRoute><Review></Review></PrivateRoute>,
+          element:<Review></Review>,
           loader:({params}) => fetch(`https://service-review-server-side-jet.vercel.app/services/${params.id}`)
         },
         {

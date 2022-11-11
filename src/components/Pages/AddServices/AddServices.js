@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../../Hooks/useTitle'
 
 const AddServices = () => {
+  useTitle("Add services")
   const notify = () => toast("Service added succesfully!");
   const [service, setService] = useState();
   const handleServiceButton = (event) => {

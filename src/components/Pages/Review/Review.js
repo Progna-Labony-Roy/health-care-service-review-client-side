@@ -11,8 +11,8 @@ const Review = () => {
   const handleAddReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    const username = form.username.value;
-    const email = form.email.value;
+    const username = user?.displayName || '';
+    const email = user?.email || 'unregistered';
     const reviewText = form.reviewText.value;
 
     const reviews = {
@@ -51,7 +51,8 @@ const Review = () => {
           name="username"
           placeholder="username"
           className="input w-2/5 input-accent mb-6"
-          required
+          defaultValue={user?.displayName}
+          readOnly
         />
         <br />
         <input
@@ -59,7 +60,8 @@ const Review = () => {
           name="email"
           placeholder="Email"
           className="input w-2/5 input-accent mb-6"
-          required
+          defaultValue={user?.email}
+          readOnly
         />
         <br />
         <textarea
@@ -73,20 +75,20 @@ const Review = () => {
          
             <button
               
-              className="btn btn-outline btn-accent mt-3 me-3"
+              className="btn btn-outline btn-accent my-3 me-3"
               type="submit"
             >
               Add review
             </button>
             
           
-          <div>
+          {/* <div>
             <Link to={`/services/${_id}`}>
               <button className="btn btn-outline btn-accent mt-3">
                 See all review
               </button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </form>
     </div>

@@ -3,16 +3,18 @@ import Card from '../Card/Card';
 import 'react-photo-view/dist/react-photo-view.css';
 
 
-const Services = () => {
+const Services = ({limit}) => {
     const [services, setServices]=useState([]);
 
     useEffect( ()=>{
-        fetch('https://service-review-server-side-jet.vercel.app/services')
+        fetch(`https://service-review-server-side-jet.vercel.app/services?limit=${limit || 100}`)
         .then( res => res.json())
         .then( data =>{
             setServices(data)
         })
     },[])
+
+    
 
     return (
         <div>

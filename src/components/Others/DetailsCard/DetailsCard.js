@@ -34,7 +34,7 @@ const DetailsCard = () => {
         </div>
       </div>
       <div>
-        {/* {
+        {
           user?.email ?
           <>
           <div className="">
@@ -54,8 +54,8 @@ const DetailsCard = () => {
             </div>
          
         </div></>
-        } */}
-         <h3 className="text-2xl font-semibold italic text-cyan-400 mb-10">All reviews</h3>
+        }
+         <h3 className="text-2xl font-semibold italic text-cyan-400 my-10">All reviews</h3>
         <ShowReview></ShowReview>
       </div>
     </div>

@@ -2,11 +2,13 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 import Banner from "../../Others/Banner/Banner/Banner";
+import FAQ from "../../Others/FAQ/FAQ";
 import Footer from '../../Others/Footer/Footer';
 import Services from "../../Others/Services/Services";
 
 const Home = () => {
   const serviceList = useLoaderData("");
+  console.log('list',serviceList)
   useTitle("Home");
   
 
@@ -42,13 +44,14 @@ const Home = () => {
       </div>
 
       {/* ------------------------- */}
-      <Services></Services>
+      
+      <Services limit={3}></Services>
       <Link className="flex justify-center" to="/services">
         <button className="btn btn-accent hover:text-white mb-10">
           See All
         </button>
       </Link>
-      
+      <FAQ></FAQ>
     </div>
    <Footer></Footer>
     </div>
