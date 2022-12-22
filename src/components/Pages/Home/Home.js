@@ -14,12 +14,10 @@ const Home = () => {
 
   return (
     <div>
-      <div className="max-w-screen-xl mx-auto">
-      <h1 className="text-3xl font-semibold italic text-cyan-400 mt-8 flex justify-center">
-        We're Glad You Found Us
-      </h1>
+      <div className="mx-auto">
+      
       {/* ---------------------- */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-screen-lg mx-auto ">
         <div className="my-32">
           <h1 className="text-2xl font-semibold italic text-cyan-400">
             Our Services
