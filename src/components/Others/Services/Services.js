@@ -7,7 +7,7 @@ const Services = ({limit}) => {
     const [services, setServices]=useState([]);
 
     useEffect( ()=>{
-        fetch(`https://service-review-server-side-jet.vercel.app/services?limit=${limit || 100}`)
+        fetch(`http://localhost:5000/services?limit=${limit || 100}`)
         .then( res => res.json())
         .then( data =>{
             setServices(data)

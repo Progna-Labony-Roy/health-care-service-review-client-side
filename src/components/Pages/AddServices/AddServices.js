@@ -5,18 +5,20 @@ import useTitle from '../../../Hooks/useTitle'
 
 const AddServices = () => {
   useTitle("Add services")
-  const notify = () => toast("Service added succesfully!");
+  const notify = () => toast("Service added successfully!");
   const [service, setService] = useState();
+
+  
   const handleServiceButton = (event) => {
     event.preventDefault();
     console.log(service);
 
-    fetch("https://service-review-server-side-jet.vercel.app/services", {
+    fetch("http://localhost:5000/addservices", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(service),
     })
-      .then((res) => res.json())
+      .then(res => res.json())
       .then((data) => console.log(data));
   };
 
@@ -88,7 +90,7 @@ const AddServices = () => {
           name="description1"
           placeholder="Type here"
           className="input input-bordered w-full max-w-xs"
-          required
+          novalidate
         />
       </div>
       <div className="form-control w-full max-w-xs">

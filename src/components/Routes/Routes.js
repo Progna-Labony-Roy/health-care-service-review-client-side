@@ -9,7 +9,7 @@ import DetailsCard from '../Others/DetailsCard/DetailsCard';
 import MyReviews from '../Pages/MyReviews/MyReviews';
 import AddServices from '../Pages/AddServices/AddServices';
 import Review from '../Pages/Review/Review';
-import PrivateRoute from '../Routes/PrivateRoute'
+// import PrivateRoute from '../Routes/PrivateRoute';
 
 
 
@@ -23,7 +23,7 @@ const router= createBrowserRouter([
         {
           path: '/',
           element:<Home></Home>,
-          loader: ()=> fetch('https://service-review-server-side-jet.vercel.app/services')
+          loader: ()=> fetch('http://localhost:5000/services')
         },
         {
           path: '/blog',
@@ -44,12 +44,12 @@ const router= createBrowserRouter([
         {
           path: '/services/:id',
           element:<DetailsCard></DetailsCard>,
-          loader: ({params}) => fetch(`https://service-review-server-side-jet.vercel.app/services/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path:'/review/:id',
           element:<Review></Review>,
-          loader:({params}) => fetch(`https://service-review-server-side-jet.vercel.app/services/${params.id}`)
+          loader:({params}) => fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path: '/addservices',

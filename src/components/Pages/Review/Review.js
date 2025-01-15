@@ -26,12 +26,12 @@ const Review = () => {
 
     // save to database
     
-      fetch("https://service-review-server-side-jet.vercel.app/reviews", {
+      fetch("http://localhost:5000/reviews", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(reviews),
       })
-        .then((res) => res.json())
+        .then(res => res.json())
         .then((data) => {
           // console.log(data)
           if(data.acknowledged){

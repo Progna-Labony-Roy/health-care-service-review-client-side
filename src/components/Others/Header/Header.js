@@ -59,7 +59,7 @@ const Header = () => {
 
   return (
 
-    <div className="navbar bg-slate-400 text-white max-w-screen-xl mx-auto">
+    <div className="navbar bg-white">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -69,7 +69,7 @@ const Header = () => {
        {navItems}
       </ul>
     </div>
-    <a href="" className="btn btn-ghost normal-case text-xl">Dental Care</a>
+    <a href="" className="btn btn-ghost normal-case text-xl">Health Care</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">

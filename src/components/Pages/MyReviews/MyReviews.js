@@ -11,7 +11,7 @@ const MyReviews = () => {
   useEffect(() => {
     // if(!user?.email) return;
     fetch(
-      `https://service-review-server-side-2pzeurh94-progna-labony-roy.vercel.app/reviews?email=${user?.email}`,{
+      `http://localhost:5000/reviews?email=${user?.email}`,{
         headers: {
           authorization: `Bearer ${localStorage.getItem('reviewToken')}`
         }
@@ -34,14 +34,14 @@ const MyReviews = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Delete?");
     if (proceed) {
-      fetch(`https://service-review-server-side-2pzeurh94-progna-labony-roy.vercel.app/reviews/${id}`, {
+      fetch(`http://localhost:5000/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            alert("deleted succesfully");
+            alert("deleted successfully");
             const remaining = myReviews.filter((myRev) => myRev._id !== id);
             setMyReviews(remaining);
                         

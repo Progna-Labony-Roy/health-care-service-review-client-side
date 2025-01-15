@@ -1,0 +1,19 @@
+.main{
+    background-image: url("../../Image/div\ 1.png");
+    height: 850px;
+}
+
+.introduction{
+    background-image: url("../../Image/hero_img\ 1.png");
+    height: 850px;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+    /* padding: 50px; */
+}
+
+.contact-info{
+    position:absolute;
+    margin-left: 12%;
+    margin-top: -100px;
+}
