@@ -277,18 +277,7 @@ safety and quality of care.</p>
       </div>
 
       </div>
-
-      {/* ----------Footer--------- */}
-      <Footer></Footer>
-
-      {/* <Services limit={3}></Services>
-      <Link className="flex justify-center" to="/services">
-        <button className="btn btn-accent hover:text-white mb-10">
-          See All
-        </button>
-      </Link>
-      <FAQ></FAQ>
-   <Footer></Footer> */}
+      <Footer></Footer>   
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Main = () => {
       <div className="">
       <Outlet></Outlet>
       </div>
-      
+    {/* <Footer></Footer>   */}
     </div>
   );
 };

@@ -46,10 +46,6 @@ const router= createBrowserRouter([
           path: '/login',
           element:<Login></Login>
         },
-        // {
-        //   path: '/services',
-        //   element: <Services></Services>
-        // },
         {
           path: '/services/:id',
           element:<DetailsCard></DetailsCard>,

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "react-photo-view/dist/react-photo-view.css";
+import linkArrow from "../../Image/linkArrow.png";
 // import { PhotoProvider, PhotoView } from "react-photo-view";
 
 
@@ -9,8 +10,8 @@ const Card = ({ service }) => {
 
   
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure>
+    <div className="card w-[440px] bg-base-100 shadow-2xl">
+      
       {/* <PhotoProvider>
       <div className="foo">
         {images.map((img, index) => (
@@ -20,10 +21,9 @@ const Card = ({ service }) => {
         ))}
       </div>
     </PhotoProvider> */}
-        <img src={img} alt="ShowImage" />
-      </figure>
+        <img className="h-10 w-10 lg:mx-10 lg:mt-5 lg:-mb-5" src={img} alt="ShowImage" />
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        {/* <h2 className="card-title">{name}</h2> */}
         <h4 className="font-semibold">{title}</h4>
        
         {/* {description1.length > 150 ? (
@@ -33,23 +33,23 @@ const Card = ({ service }) => {
             <p>{description1}</p>
           <p>{description2}</p>
      
-          <div>
+          {/* <div>
             <p>Price: ${price}</p>
-          </div>
+          </div> */}
        
 
-        <div className="card-actions justify-between">
+        <div className="card-actions justify-end">
           
           <div>
             <Link to={`/services/${_id}`}>
-              <button className="btn btn-accent">View Details</button>
+              <img className="lg:h-7" src={linkArrow} alt="" />
             </Link>
           </div>
-          <div>
+          {/* <div>
             <Link to={`/review/${_id}`}>
             <button className="btn btn-accent">Give Review</button>
             </Link>
-            </div>
+            </div> */}
         </div>
       </div>
     </div>
