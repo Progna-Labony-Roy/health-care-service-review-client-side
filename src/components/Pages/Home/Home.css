@@ -17,3 +17,29 @@
     margin-left: 12%;
     margin-top: -100px;
 }
+
+.about-image{
+    background-image: url("../../Image/AboutUs1.png");
+    background-repeat: no-repeat;
+}
+
+.about-image-two{
+    margin-top: 280px;
+    margin-left: 340px;
+}
+
+/* .departments{
+    background-image: url("../../Image/about.png");
+    background-repeat: no-repeat;
+    position: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0px auto 0px;
+    height: 100%;
+    z-index: -1;
+} */
+
+.all-departments{
+    position: relative;
+    z-index: 10;
+}

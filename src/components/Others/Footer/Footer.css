@@ -1,0 +1,8 @@
+.footer{
+    background-image: url("../../Image/Footer.png");
+    height: 420px;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+

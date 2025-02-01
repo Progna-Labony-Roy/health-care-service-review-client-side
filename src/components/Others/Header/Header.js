@@ -26,17 +26,23 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="font-semibold">
+        <Link to="/about">About</Link>
+      </li>
+      <li className="font-semibold">
+        <Link to="/findDoctor">Find Doctor</Link>
+      </li>
+      <li className="font-semibold">
         <Link to="/blog">Blog</Link>
       </li>
 
       {user?.uid ? (
         <>
-          <li className="font-semibold">
+          {/* <li className="font-semibold">
             <Link to="/addservices">Add Services</Link>
           </li>
           <li className="font-semibold">
             <Link to="/myreviews">My Reviews</Link>
-          </li>
+          </li> */}
           <li className="font-semibold">
             <button onClick={handleLogout}>Log out</button>
           </li>
