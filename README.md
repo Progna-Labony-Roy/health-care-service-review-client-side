@@ -1,10 +1,10 @@
-## Project Name : Assignment 11
+## Project Name: HealthTalk
 
 
-# Website Name : Dental care
+# Website Name: HealthTalk
 
 ## Live site link :
-https://courageous-dolphin-70afc9.netlify.app/
+https://dental-care-2fef1.web.app/
 
 ### In the project we have the following features:
 - Here we have login and register option.
